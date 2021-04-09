@@ -1,6 +1,11 @@
 import React, { Component} from 'react'
-import {StyleSheet, Text,View,FlatList ,Image} from 'react-native'
+import {StyleSheet, Text,View,FlatList ,Button,Image,ScrollView, SegmentedControlIOSBase} from 'react-native'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Bucket from '../screens/Bucketlist.js';
+import Profile from '../screens/profile.js';
+
 
 var flatListData = [
   {
@@ -50,21 +55,29 @@ var flatListData = [
   },
 ];
 
-function app(props){
-   const navigation = props.navigation
-   //Rest of your code
+class addPost extends Component{
+   render(){
+      return(
+         <Button  title ="Login" color='black'/>
+            
+      )
+   }
+}
 
 class FlatListItem extends Component {
    render() {
       return(
+         
          <View style={{
             flex:1,
             backgroundColor:'white',
          }}>
+            
+            
             <Text style={styles.FlatListItem}>{this.props.item.name}</Text>
             <Image
                 source={{uri:this.props.item.imageUrl}}
-                style={{whidth:300,height:300}}
+                style={{width:380,height:300}}
                   > 
                 
             </Image>
@@ -77,24 +90,12 @@ class FlatListItem extends Component {
             backgroundColor:'black',
          }}>
          </View>
+         
          </View>
       )
    }
 }
 
-const styles = StyleSheet.create({
-   
- FlatListItem:  {  
-  color:'black',
-  padding:20,
-  fontSize:30,  
-},
-FlatListItemm:  {  
-   color:'black',
-   padding:20,
-   fontSize:15,  
- }
- });
 
 
 
@@ -104,6 +105,11 @@ export default class BasicFlatList extends Component{
    render() {
    return(
      <View style={{flex:1, marginTop:50}}> 
+
+
+<View style={styles.header}>
+        <Text style={styles.title}>News Feed</Text>
+        </View>    
      <FlatList
       data={flatListData}
       renderItem={({item,index})=>{
@@ -119,9 +125,36 @@ export default class BasicFlatList extends Component{
      </FlatList> 
      
      </View>
+     
    );
  }
  
  
+ 
  }
-}
+ const styles = StyleSheet.create({
+   
+   FlatListItem:  {  
+    color:'black',
+    padding:20,
+    fontSize:30,  
+  },
+  FlatListItemm:  {  
+     color:'black',
+     padding:20,
+     fontSize:15,  
+   },
+   header:{
+      height:70,
+      padding:10,
+      backgroundColor: 'black'
+     },
+     title:{
+         textAlign:'center',
+         paddingTop:20,
+         color:'white',
+         fontSize:20,
+         fontWeight:'bold',
+     }
+   });
+  

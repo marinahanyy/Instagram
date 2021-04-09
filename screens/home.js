@@ -1,17 +1,11 @@
-import React from 'react';
-import { Text, View, Button,StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React,{Component} from 'react';
+import { Text, View, Button,StyleSheet,ScrollView,Image,TextInput,TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-
-export default function Home() {
-    
-
-  
-  const navigation = useNavigation();
-  function navigateToList() {
-    navigation.navigate("Profile");
-}
- 
+export default class Home extends Component {
+   render(){
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -19,14 +13,14 @@ export default function Home() {
         <TextInput style={styles.input} placeholder ='   email' />
         <TextInput style={styles.input1} placeholder ='   password' />
         <TouchableOpacity style ={styles.button}>
-        <Button  title ='Login' onPress={()=>navigateToList()}
+        <Button  title ='Login' 
            color='white'/>
         </TouchableOpacity>
         </ScrollView>
       </View>   
     );
    }
-  
+}
    
 
 

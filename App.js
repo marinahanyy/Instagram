@@ -1,10 +1,23 @@
-import React, {useState, Component} from 'react';
-import { StyleSheet, Text, View, Image,TextInput,Button, TouchableOpacity} from 'react-native';
-import Todo from './screens/Bucketlist.js';
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import Home from './screens/home.js';
+import Bucket from './screens/Bucketlist.js';
+import NewsFeedd from './screens/newsFeed.js';
+import Profile from './screens/profile.js';
 
 
+
+
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  return(
-     <Todo/>
-    );}
+  return (
+    <View>
+      <Text>hi</Text>
+    </View>
+  );
+}

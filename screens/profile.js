@@ -6,8 +6,11 @@ import { StyleSheet, Text, View, Image,TextInput,Button, TouchableOpacity,Scroll
 const Profile =()=>{
     return(
         <ScrollView>
+           <View style={styles.header}>
+        <Text style={styles.title}>Profile</Text>
+        </View>
       <View style={{borderBottomWidth:1,borderBottomColor:"grey"}}>     
-                 <View style={{marginTop:40}}>
+                 <View style={{marginTop:10}}>
                   <Image
                    source={{uri:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"}}
                    style={{width:160,height:160,borderRadius:80}}/>
@@ -77,6 +80,24 @@ const Profile =()=>{
           
     )
 }
+
+
+
+
+const styles = StyleSheet.create({
+   header:{
+    height:110,
+    padding:30,
+    backgroundColor: 'black'
+   },
+   title:{
+       textAlign:'center',
+       paddingTop:25,
+       color:'white',
+       fontSize:20,
+       fontWeight:'bold',
+   }
+});
 
 
 export default Profile
