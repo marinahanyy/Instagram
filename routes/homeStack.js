@@ -1,23 +1,30 @@
-import React from 'react';
+import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import NewsFeedd from '../screens/newsFeed.js';
 import Profile from '../screens/profile.js';
-import Bucket from './screens/Bucketlist.js';
-import Home from './screens/home.js';
-import AddPost from './screens/AddPost.js';
+import Home from '../screens/home.js';
+
+
+
+const Tab = createBottomTabNavigator();
 const AppStack = createStackNavigator();
 export default function Navigator(){
 
     return (
+
     <NavigationContainer>
     <AppStack.Navigator screenOptions={{ headerShown: true }} >
-    <AppStack.Screen name="News" component={NewsFeedd} />
-    <AppStack.Screen name="Profile" component={Profile} />
-    <AppStack.Screen name="Todo" component={Bucket} />
-    <AppStack.Screen name="Addpost" component={AddPost} />
+       <AppStack.Screen name="Home" component={Home} />
+   
     </AppStack.Navigator>
 
+    <Tab.Navigator>
+        <Tab.Screen name="Home" component={Profile} />
+        <Tab.Screen name="Settings" component={NewsFeedd} />
+      </Tab.Navigator>
+
+     
     </NavigationContainer>
     );
 }
