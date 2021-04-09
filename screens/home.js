@@ -1,8 +1,5 @@
 import React,{Component} from 'react';
 import { Text, View, Button,StyleSheet,ScrollView,Image,TextInput,TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 export default class Home extends Component {
    render(){
